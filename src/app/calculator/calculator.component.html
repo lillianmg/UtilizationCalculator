@@ -1,0 +1,48 @@
+<div class="calculator-container">
+  <h3 class="text-center mb-4">Ideally 30%</h3>
+
+  <div class="form-group mb-3">
+    <label for="creditLimit">Credit Limit:</label>
+    <div class="input-group">
+      <span class="input-group-text">$</span>
+      <input
+        type="number"
+        id="creditLimit"
+        [(ngModel)]="creditLimit"
+        class="form-control"
+        placeholder="Enter credit limit"
+      />
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="currentBalance">Current Balance:</label>
+    <div class="input-group">
+      <span class="input-group-text">$</span>
+      <input
+        type="number"
+        id="currentBalance"
+        [(ngModel)]="currentBalance"
+        class="form-control"
+        placeholder="Enter current balance"
+      />
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="targetUtilization">Target Utilization (%):</label>
+    <input
+      type="number"
+      id="targetUtilization"
+      [(ngModel)]="targetUtilization"
+      class="form-control"
+      placeholder="Enter target utilization"
+    />
+  </div>
+
+  <button (click)="calculate()" class="btn btn-primary w-100">Calculate</button>
+
+  <div *ngIf="paymentRequired !== null" class="mt-4 alert alert-success">
+    <strong>Payment Required:</strong> {{ paymentRequired | currency }}
+  </div>
+</div>

@@ -1,0 +1,32 @@
+.row {
+  margin-top: 20px;
+
+  .col {
+    input {
+      border: 2px solid #268e64;
+      border-radius: 8px;
+    }
+  }
+}
+
+$fade-white : #eee;
+$white : #ccc;
+
+a{
+  color:#268e64;
+  text-decoration: none;
+
+  &:visited{
+    color: rgb(6, 159, 103);
+    text-decoration: none;
+    opacity: 0.42;
+  }
+  &:hover{
+    opacity: 0.7;
+    color: greenyellow;
+  }
+  &:active{
+    opacity: 1;
+    text-decoration: none;
+  }
+}
