@@ -12,8 +12,16 @@ export class CalculatorComponent {
   paymentRequired: number | null = null;
 
   calculate(): void {
-    const targetUtilizationDecimal = this.targetUtilization / 100;
-    const desiredBalance = this.creditLimit * targetUtilizationDecimal;
-    this.paymentRequired = parseFloat((this.currentBalance - desiredBalance).toFixed(2));
+    const targetUtilizationDecimal = this.targetUtilization / 100; // Convert percentage to decimal
+    const desiredBalance = this.creditLimit * targetUtilizationDecimal; // Calculate the target balance
+  
+    if (this.currentBalance <= desiredBalance) {
+      // If the current balance is already below or equal to the target, no payment is required
+      this.paymentRequired = 0;
+    } else {
+      // Otherwise, calculate the payment required
+      this.paymentRequired = parseFloat((this.currentBalance - desiredBalance).toFixed(2));
+    }
   }
+  
 }
