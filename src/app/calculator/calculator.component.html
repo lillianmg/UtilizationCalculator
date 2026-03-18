@@ -23,7 +23,7 @@
   </div>
 
   <button (click)="calculate()" class="btn btn-primary w-100">Calculate</button>
-  <div><p>Note: To keep your reported balance low, make your payment before your statement closing date because that's when your card issuer sends your balance information to the credit bureaus.</p></div>    
+  <div><small><strong>Note:</strong> To keep your reported balance low, make your payment before your statement closing date because that's when your card issuer sends your balance information to the credit bureaus.</small></div>    
   <!-- Display the result -->
   <div *ngIf="paymentRequired !== null" class="mt-4 alert alert-success" [ngClass]="paymentRequired > 0 ? 'alert-success' : 'alert-info'">
     <strong *ngIf="paymentRequired > 0">Payment Required:</strong>
